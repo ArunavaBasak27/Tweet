@@ -29,10 +29,11 @@ namespace TweetApp.Api
             builder.Services.AddControllers();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<IServices, Services>();
-            builder.Services.AddScoped<IKafkaSender, KafkaSender>();    
+            builder.Services.AddScoped<IKafkaSender, KafkaSender>();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddDbContext<ApplicationDbContext>
-                (options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddDbContext<ApplicationDbContext>(options=>options.UseInMemoryDatabase("TweetAppDB"));
+            //builder.Services.AddDbContext<ApplicationDbContext>
+            //    (options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddEndpointsApiExplorer();
 
             builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();

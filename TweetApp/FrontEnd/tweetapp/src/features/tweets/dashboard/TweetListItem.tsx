@@ -54,7 +54,7 @@ const TweetListItem = ({ tweet }: Props) => {
 				<Segment>
 					<span>
 						<Icon name="clock" />
-						{format(Date.parse(tweet.datePosted+'Z'), "dd MMM yyyy hh:mm:aa")}
+						{format(Date.parse(tweet.datePosted), "dd MMM yyyy hh:mm:aa")}
 					</span>
 				</Segment>
 				<Segment clearing>

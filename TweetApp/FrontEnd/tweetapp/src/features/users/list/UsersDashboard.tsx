@@ -11,7 +11,7 @@ const UsersDashboard = () => {
 	
 
 	useEffect(() => {
-		if (users.length <= 1) loadUsers();
+		if (users.length < 1) loadUsers();
 	}, [loadUsers, users.length]);
 
 
