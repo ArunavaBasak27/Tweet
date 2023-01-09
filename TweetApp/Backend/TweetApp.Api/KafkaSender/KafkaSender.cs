@@ -6,7 +6,7 @@ namespace TweetApp.Api.KafkaProducer
     {
         public void Publish(string message)
         {
-            using (var producer = new ProducerBuilder<Null, string>(new ProducerConfig { BootstrapServers = "localhost:9092" }).Build())
+            using (var producer = new ProducerBuilder<Null, string>(new ProducerConfig { BootstrapServers = "broker:29092" }).Build())
             {
                 try
                 {

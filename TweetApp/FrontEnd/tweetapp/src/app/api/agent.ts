@@ -12,7 +12,7 @@ const sleep = (delay: number) => {
 	});
 };
 
-axios.defaults.baseURL = "https://localhost:7055/api/v1/tweets";
+axios.defaults.baseURL = "https://localhost:8002/api/v1/tweets";
 
 axios.interceptors.request.use((config) => {
 	const token = store.commonStore.token;
